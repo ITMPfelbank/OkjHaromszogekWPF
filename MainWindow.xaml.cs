@@ -44,10 +44,7 @@ namespace Haromszogek
                         lbHibak.Items.Add($"{ssz}. sor: {ex.Message}");
                     }
                 }
-                foreach (var i in h)
-                {
-                    lbHaromszogek.Items.Add(i);
-                }
+                foreach (var i in h) lbHaromszogek.Items.Add(i);
             }
 
         }
@@ -60,7 +57,6 @@ namespace Haromszogek
                 lbKerulet.Content = $"Kerület = {h[index].Kerulet}";
                 lbTerulet.Content = $"Terület = {h[index].Terulet}";
             }
-
         }
     }
 }
