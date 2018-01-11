@@ -95,7 +95,7 @@ namespace Haromszogek
 
         public override string ToString()
         {
-            return String.Format($"{SorSzama}. sor: a={a} b={b} c={c}");
+            return $"{SorSzama}. sor: a={a} b={b} c={c}";
         }
 
     }
