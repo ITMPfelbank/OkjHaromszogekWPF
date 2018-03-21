@@ -4,20 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Derékszögű háromszögek" Height="430" Width="600">
-    <Grid>
-        <Button x:Name="btnBetolt" Content="Adatok betöltése" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="134" Height="27" Click="btnBetölt_Click" Grid.ColumnSpan="2"/>
-        <GroupBox x:Name="gbHibak" Header="Hibák a kiválasztott állományban"  HorizontalAlignment="Left" Height="120" Margin="20,53,0,0" VerticalAlignment="Top" Width="550" BorderThickness="3" Grid.ColumnSpan="2" >
-            <ListBox x:Name="lbHibak" BorderThickness="0"/>
+        Title="Derékszögű háromszögek" Height="340" Width="570">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style TargetType="GroupBox">
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="120" />
+        </Style>
+    </Window.Resources>
+    <WrapPanel>
+        <Button x:Name="btnBetolt" Content="Adatok betöltése" Click="btnBetölt_Click" />
+        <GroupBox x:Name="gbHibak" Header="Hibák a kiválasztott állományban">
+            <ListBox x:Name="lbHibak"/>
         </GroupBox>
-        <GroupBox x:Name="gbHaromszogek" Header="Derékszögű háromszögek"  HorizontalAlignment="Left" Height="200" Margin="20,180,0,0" VerticalAlignment="Top" Width="200" BorderThickness="3" Grid.ColumnSpan="2">
-            <ListBox x:Name="lbHaromszogek" BorderThickness="0" Margin="2,0,0,0" SelectionChanged="lbHaromszogek_SelectionChanged"/>
+        <GroupBox x:Name="gbHaromszogek" Header="Derékszögű háromszögek">
+            <ListBox x:Name="lbHaromszogek" SelectionChanged="lbHaromszogek_SelectionChanged"/>
         </GroupBox>
-        <GroupBox x:Name="gbMegoldas" Header="Kiválasztott derékszögű háromszög adatai" HorizontalAlignment="Left" Margin="225,180,0,0" VerticalAlignment="Top" Height="102" Width="340" BorderThickness="3">
-            <Grid>
-                <Label x:Name="lbKerulet" Content="Kerület=" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="300"/>
-                <Label x:Name="lbTerulet" Content="Terület = " HorizontalAlignment="Left" Margin="10,40,0,0"  Width="300"/>
-            </Grid>
+        <GroupBox x:Name="gbMegoldas" Header="Kiválasztott derékszögű háromszög adatai" >
+            <StackPanel>
+                <Label x:Name="lbKerulet" Content="Kerület = " />
+                <Label x:Name="lbTerulet" Content="Terület = " />
+            </StackPanel>
         </GroupBox>
-    </Grid>
+    </WrapPanel>
 </Window>
